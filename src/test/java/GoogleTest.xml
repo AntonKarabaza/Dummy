@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="SanitySuit" parallel="tests" thread-count="5">
+    <test name="GoogleTest" >
+        <classes>
+            <class name="Sanity.GooglePageTest"/>
+        </classes>
+    </test>
+
+</suite>
