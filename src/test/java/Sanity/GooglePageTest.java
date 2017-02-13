@@ -5,29 +5,24 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
+import pageobject.GooglePage;
+import tools.WebDriverInstansiator;
 
-public class GooglePageTest {
+public class GooglePageTest extends BaseTest {
 
-    private WebDriver driver;
+    private GooglePage googlePage;
 
     @BeforeClass
     public void setUp() {
-
-        System.setProperty("webdriver.chrome.driver", "D:\\SELENIUM\\chromedriver.exe");
-        driver = new ChromeDriver();
-        driver.get("http://google.com");
+        googlePage = new GooglePage(WebDriverInstansiator.getWebDriver());
+        googlePage.open();
     }
 
     @Test
     public void readPageTitleTest() {
 
         String expected = "Google";
-        String actual = driver.getTitle();
+        String actual = googlePage.readHeader();
         Assert.assertEquals(expected, actual);
-    }
-
-    @AfterClass
-    public void tearDown() {
-        driver.quit();
     }
 }

@@ -10,6 +10,10 @@ public class GooglePage {
         this.driver = driver;
     }
 
+    public void open(){
+        driver.get("http://www.google.com/");
+    }
+
     public String readHeader() {
         return driver.getTitle();
     }
