@@ -5,11 +5,13 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import tools.WebDriverInstansiator;
 
+import java.net.MalformedURLException;
+
 public class BaseTest {
 
     @Parameters("BrowserName")
     @BeforeClass
-    public void setUp(String browserName) throws InstantiationException {
+    public void setUp(String browserName) throws InstantiationException, MalformedURLException {
         WebDriverInstansiator.setWebDriver(browserName);
     }
 
