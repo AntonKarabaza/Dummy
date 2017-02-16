@@ -23,6 +23,6 @@ public class GooglePageTest extends BaseTest {
 
         String expected = "Google1";
         String actual = googlePage.readHeader();
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(actual, expected);
     }
 }
