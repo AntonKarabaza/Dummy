@@ -25,7 +25,7 @@ public class WebDriverFactory {
         switch (editedBrowserName) {
             case "chrome":
                 DesiredCapabilities capabilityChrome = new DesiredCapabilities();
-                    capabilityChrome.setCapability("name", "GoogleTest");
+                    capabilityChrome.setCapability("name", "GoogleTestChrome");
                     capabilityChrome.setCapability("browser_api_name", "Chrome56x64");
                     capabilityChrome.setCapability("os_api_name", "Win10");
                     capabilityChrome.setCapability("screen_resolution", "1366x768");
@@ -37,13 +37,22 @@ public class WebDriverFactory {
             case "opera":
                 System.setProperty("webdriver.opera.driver", "D:\\SELENIUM\\operadriver.exe");
                 return webDriver = new OperaDriver();
-            case "ie":
-                return webDriver = new InternetExplorerDriver();
+            case "edge":
+                DesiredCapabilities capabilityEdge = new DesiredCapabilities();
+                    capabilityEdge.setCapability("name", "GoogleTestEdge");
+                    capabilityEdge.setCapability("browser_api_name", "Edge20");
+                    capabilityEdge.setCapability("os_api_name", "Win10");
+                    capabilityEdge.setCapability("screen_resolution", "1366x768");
+                    capabilityEdge.setCapability("record_video", "true");
+                    capabilityEdge.setCapability("record_network", "true");
+                return webDriver = new RemoteWebDriver(new URL(
+                        "http://antonkarabaza%40gmail.com:u0a75a81b3953a3e@hub.crossbrowsertesting.com:80/wd/hub"),
+                        capabilityEdge);
             case "htmlunit":
                 return webDriver = new HtmlUnitDriver();
             case "firefox":
                 DesiredCapabilities capabilityFirefox = new DesiredCapabilities();
-                    capabilityFirefox.setCapability("name", "GoogleTest");
+                    capabilityFirefox.setCapability("name", "GoogleTestFirefox");
                     capabilityFirefox.setCapability("browser_api_name", "FF46x64");
                     capabilityFirefox.setCapability("os_api_name", "Win10");
                     capabilityFirefox.setCapability("screen_resolution", "1366x768");
