@@ -24,11 +24,16 @@ public class WebDriverFactory {
 
         switch (editedBrowserName) {
             case "chrome":
-                DesiredCapabilities capabilityChrome = DesiredCapabilities.chrome();
-                    capabilityChrome.setBrowserName("chrome");
-                    capabilityChrome.setVersion("2.27");
-                    capabilityChrome.setPlatform(Platform.WIN10);
-                return webDriver = new RemoteWebDriver(new URL("http://10.34.41.252:4444/wd/hub"), capabilityChrome);
+                DesiredCapabilities capabilityChrome = new DesiredCapabilities();
+                    capabilityChrome.setCapability("name", "GoogleTest");
+                    capabilityChrome.setCapability("browser_api_name", "Chrome56x64");
+                    capabilityChrome.setCapability("os_api_name", "Win10");
+                    capabilityChrome.setCapability("screen_resolution", "1366x768");
+                    capabilityChrome.setCapability("record_video", "true");
+                    capabilityChrome.setCapability("record_network", "true");
+                return webDriver = new RemoteWebDriver(new URL(
+                        "http://antonkarabaza%40gmail.com:u0a75a81b3953a3e@hub.crossbrowsertesting.com:80/wd/hub"),
+                        capabilityChrome);
             case "opera":
                 System.setProperty("webdriver.opera.driver", "D:\\SELENIUM\\operadriver.exe");
                 return webDriver = new OperaDriver();
@@ -37,11 +42,16 @@ public class WebDriverFactory {
             case "htmlunit":
                 return webDriver = new HtmlUnitDriver();
             case "firefox":
-                DesiredCapabilities capabilityFirefox = DesiredCapabilities.firefox();
-                    capabilityFirefox.setBrowserName("firefox");
-                    capabilityFirefox.setVersion("46.0.1");
-                    capabilityFirefox.setPlatform(Platform.WIN10);
-                return webDriver = new RemoteWebDriver(new URL("http://10.34.41.252:4444/wd/hub"), capabilityFirefox);
+                DesiredCapabilities capabilityFirefox = new DesiredCapabilities();
+                    capabilityFirefox.setCapability("name", "GoogleTest");
+                    capabilityFirefox.setCapability("browser_api_name", "FF46x64");
+                    capabilityFirefox.setCapability("os_api_name", "Win10");
+                    capabilityFirefox.setCapability("screen_resolution", "1366x768");
+                    capabilityFirefox.setCapability("record_video", "true");
+                    capabilityFirefox.setCapability("record_network", "true");
+                return webDriver = new RemoteWebDriver(new URL(
+                        "http://antonkarabaza%40gmail.com:u0a75a81b3953a3e@hub.crossbrowsertesting.com:80/wd/hub"),
+                        capabilityFirefox);
             default:
                 throw new InstantiationException("Browser is not instantiated");
         }

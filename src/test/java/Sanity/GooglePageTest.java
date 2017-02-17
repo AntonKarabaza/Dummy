@@ -21,7 +21,7 @@ public class GooglePageTest extends BaseTest {
     @Test
     public void readPageTitleTest() {
 
-        String expected = "Google";
+        String expected = "Google1";
         String actual = googlePage.readHeader();
         Assert.assertEquals(actual, expected);
     }
