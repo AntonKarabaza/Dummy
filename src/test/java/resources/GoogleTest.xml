@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="SanitySuit" parallel="tests" thread-count="5" verbose="10">
+<suite name="SanitySuit" parallel="tests" thread-count="5">
     <test name="GoogleTestChrome" >
         <parameter name="BrowserName" value="Chrome"/>
         <classes>
@@ -15,4 +15,10 @@
         </classes>
     </test>
 
+    <test name="GoogleTestIE" >
+        <parameter name="BrowserName" value="IE"/>
+        <classes>
+            <class name="Sanity.GooglePageTest"/>
+        </classes>
+    </test>
 </suite>
